@@ -9,9 +9,9 @@ module.exports = function(grunt) {
     },
     dist: {
       // files needs to be concatenated
-      src: ['src/**/*.js'],
+      src: ['public/client/*.js'],
       // location of the concatenated output JS file
-      dest: 'dist/<%= pkg.name %>.js'
+      dest: 'public/dist/testCon.js'
     }
   },
 //   jshint: {
@@ -44,13 +44,13 @@ nodemon: {
 },
 
 uglify: {
- options: {
-      // banner will be inserted at the top of the output which displays the date and time
-      banner: '/*! <%= pkg.name %> <%= grunt.template.today() %> */\n'
-    },
+
     dist: {
+      options:{
+        sourceMap:true
+    },
       files: {
-       'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+       'dist/all.min.js': ['public/client/**/*.js']
      }
    }
 
@@ -63,6 +63,12 @@ uglify: {
       },
 
       cssmin: {
+        combine : {
+          files : {
+           'public/style.css':['public/style.css']
+ 
+          }
+        }
       },
 
       watch: {
@@ -104,7 +110,10 @@ uglify: {
   ////////////////////////////////////////////////////
   // Main grunt tasks
   ////////////////////////////////////////////////////
+ grunt.registerTask('default', [   
 
+    'cssmin', 'concat','uglify'
+    ]);
   grunt.registerTask('test', [
     'mochaTest'
     ]);

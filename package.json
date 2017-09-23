@@ -28,7 +28,7 @@
     "grunt": "^0.4.4",
     "grunt-contrib-concat": "^1.0.0",
     "grunt-contrib-cssmin": "^1.0.1",
-    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-uglify": "^1.0.2",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-eslint": "^18.0.0",
     "grunt-mocha-test": "^0.12.7",
@@ -36,12 +36,14 @@
     "grunt-shell": "^1.2.1",
     "knex": "^0.10.0",
     "mocha": "^2.4.5",
-    "mongoose": "^4.4.10",
+    "mongoose": "^4.11.12",
     "request": "^2.34.0",
     "sqlite3": "~3.1.1"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-uglify": "^1.0.2",
     "supertest": "^1.2.0"
   }
 }
